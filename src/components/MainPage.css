@@ -1,0 +1,367 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.react-datepicker__input-container input {
+  background-color: red;
+  color: white;
+  border: none;
+  width: 70px;
+}
+
+.react-datepicker-popper {
+  margin-left: 300px !important;
+}
+
+.zoomcontrolbutton {
+  background-color: #1a2737 !important; /* Replace with your desired color */
+  width: 42px !important; /* Adjust width as needed */
+  height: 52px !important; /* Adjust height as needed */
+  line-height: 60px !important; /* Adjust line-height to be the same as height */
+  border-radius: 60% !important;
+  margin: 5px;
+}
+
+.leaflet-touch .leaflet-draw-actions {
+  /* # display it on center of page; */
+  position: absolute;
+  /* top half of screen width */
+  left: 500px;
+  right: 0;
+
+  margin: auto;
+}
+
+.area-text {
+  color: white;
+  font-size: "15px";
+  margin-left: 20px;
+  margin-top: 8px;
+}
+
+.leaflet-draw.leaflet-control {
+  width: auto;
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 100vh;
+  background: none;
+}
+
+.leaflet-draw-toolbar-top {
+  display: flex;
+  flex-direction: row;
+}
+
+.leaflet-draw-section {
+  margin-right: 5px;
+}
+.leaflet-draw-toolbar a {
+  display: none;
+}
+/* Change the color of the EditControl buttons' icons */
+.leaflet-draw-toolbar a {
+  color: green !important; /* Replace with your desired color */
+}
+.leaflet-control-container {
+  width: 100%;
+  height: 100vh;
+}
+
+/* Change the color of the EditControl buttons' icons when hovering */
+.leaflet-draw-toolbar a:hover {
+  color: white !important; /* Replace with your desired hover color */
+}
+
+/* Change the background color of the ZoomControl individual buttons */
+.leaflet-bar.leaflet-control-zoom a {
+  display: none;
+}
+
+/* Change the background color of the ZoomControl individual buttons when hovering */
+.leaflet-bar.leaflet-control-zoom a:hover {
+  background-color: #1a2737 !important; /* Replace with your desired hover color */
+}
+/* Change the color of the + and - symbols */
+.leaflet-control-zoom a {
+  color: white !important; /* Replace with your desired color */
+}
+
+/* Change the color of the + and - symbols when hovering */
+.leaflet-control-zoom a:hover {
+  color: white !important; /* Replace with your desired hover color */
+}
+.custom-button {
+  padding: 15px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  z-index: inherit;
+  cursor: pointer;
+}
+.custom-button:hover {
+  background-color: #4cb963; /* Change this to the desired color */
+}
+
+.iono {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1a2737;
+  z-index: 1000;
+}
+
+.leaflet-top,
+.leaflet-left {
+  top: 50px;
+}
+
+/* src/DropdownMenu.css */
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  scrollbar-width: thin;
+  overflow-y: auto;
+  max-height: 100px;
+  border: white;
+}
+
+.dropdown::-webkit-scrollbar {
+  width: 6px; /* Set the width of the scrollbar */
+}
+
+.dropdown::-webkit-scrollbar-track {
+  border-radius: 1px;
+  background-color: #1a2737;
+  border-left: 3px solid #1a2737;
+  border-right: 3px solid #1a2737;
+}
+.dropdown-content {
+  padding-bottom: 20%; /* Adjust as needed */
+}
+.dropdown::-webkit-scrollbar-thumb {
+  background-color: rgba(
+    217,
+    217,
+    217,
+    1
+  ); /* Set the color of the scrollbar thumb */
+  border-radius: 3px; /* Set the border radius of the scrollbar thumb */
+  height: 10px; /* Set a shorter height for the scrollbar thumb */
+  border: 1px solid;
+  width: 3px;
+  border: 2px solid rgba(217, 217, 217, 1); /* Set the border of the scrollbar thumb */
+  box-sizing: border-box;
+  margin-right: "100px";
+}
+
+.custom-button {
+  margin: 5px;
+  background: #ffffff14;
+  border: none;
+  border-radius: 32px;
+  color: white;
+  padding: 8px;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  overflow: hidden;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+  overflow: hidden;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(217, 217, 217, 1);
+  border-radius: 5px;
+}
+
+.custom-button:hover {
+  background: #4cb963;
+}
+
+.custom-button.closed {
+  background: #ffffff14;
+}
+
+.custom-button.open {
+  background: #4cb963;
+}
+
+.dropdown-arrow {
+  margin-left: 10px;
+}
+
+.dropdown-button {
+  cursor: pointer;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: " #1A273";
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+.dropdown-item {
+  background: none;
+  color: white;
+  border: none;
+  display: block;
+  text-align: left;
+  width: 100%;
+  padding: 5px 0;
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.leaflet-control-attribution {
+  display: none;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.flag-container {
+  width: 750px;
+  height: 125px;
+  margin: 0 auto;
+}
+
+.azFlag {
+  width: 100%;
+  height: 100%;
+  background: #e00034;
+  border-top: 125px solid #0097c3;
+  border-bottom: 125px solid #00ae65;
+  z-index: -1;
+}
+
+.crescent {
+  width: 20%;
+  height: 100%;
+  border-radius: 100%;
+  background: #e00034;
+  margin: 0 auto;
+  box-shadow: -10px 0 0 7px #fff;
+}
+
+#star {
+  background: 0 0;
+  width: 20%;
+  height: 0;
+  position: relative;
+  top: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top: solid 15px #fff;
+  border-bottom: solid 15px #fff;
+  border-left: solid 15px transparent;
+  border-right: solid 15px transparent;
+  transform: rotate(70deg);
+}
+
+#star:before {
+  content: "";
+  background: 0 0;
+  width: 20%;
+  height: 0;
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  border-top: solid 15px #fff;
+  border-bottom: solid 15px #fff;
+  border-left: solid 15px transparent;
+  border-right: solid 15px transparent;
+  transform: rotate(90deg);
+}
+
+.circle {
+  width: 20%;
+  height: 20%;
+  border-radius: 100%;
+  background: #fff;
+  position: relative;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}

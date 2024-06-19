@@ -1,0 +1,117 @@
+.myCalendar .react-calendar {
+  border: none;
+  width: 100%;
+  background-color: #1a2737;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+.myCalendar .react-calendar__tile,
+.myCalendar .react-calendar__month-view__days__day,
+.myCalendar .react-calendar__month-view__weekdays__weekday {
+  color: #4cb963;
+  border: none;
+  text-decoration: none;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+.myCalendar .react-calendar__month-view__days .react-calendar__tile,
+.myCalendar
+  .react-calendar__tile:not(.react-calendar__month-view__weekdays__weekday) {
+  border: none;
+  text-decoration: none;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+.myCalendar .react-calendar__month-view__days__day--weekend {
+  color: #ffffff;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+.myCalendar .react-calendar__navigation__label,
+.myCalendar .react-calendar__navigation button:enabled:hover,
+.myCalendar .react-calendar__navigation button:enabled:focus {
+  background-color: #1a2737;
+  color: #ffffff;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+.myCalendar .react-calendar__tile--now {
+  background: #1a2737;
+  color: #abb0ff; /* Change color of the current date's text to blue */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.myCalendar .react-calendar__tile:hover {
+  border-radius: 49%;
+  color: #ffffff;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1a2737; /* same as non-hover background */
+}
+
+.myCalendar .react-calendar__tile--active:hover,
+.myCalendar .react-calendar__tile:active:hover {
+  background: #1a2737 !important; /* This will be the color of the hovered active/clicked date */
+}
+
+.myCalendar .react-calendar__tile--now:active,
+.myCalendar .react-calendar__tile--now--active {
+  background: #1a2737 !important;
+  color: pink;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.myCalendar .react-calendar__tile--now:active:hover,
+.myCalendar .react-calendar__tile--now--active:hover {
+  background: #1a2737 !important;
+}
+
+.myCalendar .react-calendar__month-view__weekdays__weekday abbr {
+  text-decoration: none;
+  border: none;
+}
+
+.myCalendar .react-calendar__navigation button {
+  color: #ffffff;
+}
+
+.myCalendar .react-calendar__tile {
+  color: grey !important;
+}
+
+.myCalendar .highlighted-date {
+  color: #ffffff !important; /* Choose a color that suits your design */
+}
+
+.myCalendar .react-calendar__tile--now {
+  color: #abb0ff !important;
+  background: #1a2737 !important;
+}
+
+.myCalendar .react-calendar__decade-view__navigation__label,
+.myCalendar .react-calendar__century-view__decades__decade__label {
+  color: #1a2737 !important; /* The color you specified */
+}
+
+.myCalendar .react-calendar__navigation__label {
+  border: none !important;
+}
+
+.myCalendar .react-calendar__tile:active,
+.myCalendar .react-calendar__tile--active {
+  background: #4cd159 !important; /* This will be the color of the active/clicked date */
+  color: white !important;
+  border-radius: 50% !important;
+}
+.myCalendar .react-calendar__tile--active:hover {
+  background: #4cd159 !important;
+}
