@@ -106,7 +106,7 @@ const SetViewOnClick = ({ coords, map }) => {
 const MainPage = () => {
   const [ETActive, setETActive] = useState(false);
   const [waterProdActive, setwaterProdActive] = useState(false);
-  const [bioticStressActive, setbioticStressActive] = useState(false);
+  const [DiseaseStressActive, setDiseaseStressActive] = useState(false);
   const [harvestActive, setHarvestActive] = useState(false);
   const [sucroseActive, setSucroseActive] = useState(false);
   const [yieldActive, setYieldActive] = useState(false);
@@ -241,8 +241,8 @@ const MainPage = () => {
       en: "Water Productivity",
       ru: "Производительность воды",
     },
-    "Biotic Stress": {
-      en: "Biotic Stress",
+    "Disease Stress": {
+      en: "Disease Stress",
       ru: "Производительность воды",
     },
   };
@@ -381,7 +381,7 @@ const MainPage = () => {
       setgeodata(null);
       setmeandata(null);
       setmeandata2(null);
-      const response = await fetch("https://riyadhhazel.duckdns.org/api/data");
+      const response = await fetch("http://localhost:3000/api/data");
       const { data, geo_data } = await response.json();
       // console.log(data);
       // console.log(geo_data);
@@ -419,7 +419,7 @@ const MainPage = () => {
     // console.log("Running fetchGeoTiff");
     let base64Data;
     if (!selectedtiff) {
-      const response = await fetch("https://riyadhhazel.duckdns.org/geotiff");
+      const response = await fetch("http://localhost:3000/geotiff");
       const data = await response.json();
       console.log(data);
       base64Data = data.file;
@@ -460,7 +460,7 @@ const MainPage = () => {
 
     try {
       // console.log("inside try");
-      await fetch("https://riyadhhazel.duckdns.org/execute-script", {
+      await fetch("http://localhost:3000/execute-script", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -625,7 +625,7 @@ const MainPage = () => {
     setisdatefetching(true);
     try {
       const response = await fetch(
-        "https://riyadhhazel.duckdns.org/date_process_and_fetch",
+        "http://localhost:3000/date_process_and_fetch",
         {
           method: "POST",
           headers: {
@@ -657,20 +657,17 @@ const MainPage = () => {
 
   const senddatefortiff = async (date) => {
     try {
-      const response = await fetch(
-        "https://riyadhhazel.duckdns.org/senddatefortiff",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            startDate: date,
-            crop: selectedCrop,
-            input_string: selectedParameter,
-          }),
-        }
-      );
+      const response = await fetch("http://localhost:3000/senddatefortiff", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          startDate: date,
+          crop: selectedCrop,
+          input_string: selectedParameter,
+        }),
+      });
 
       if (response.ok) {
         const jsonResponse = await response.json();
@@ -1018,8 +1015,8 @@ const MainPage = () => {
     if (waterProdActive) {
       setwaterProdActive(!waterProdActive);
     }
-    if (bioticStressActive) {
-      setbioticStressActive(!bioticStressActive);
+    if (DiseaseStressActive) {
+      setDiseaseStressActive(!DiseaseStressActive);
     }
   };
 
@@ -1061,8 +1058,8 @@ const MainPage = () => {
     if (waterProdActive) {
       setwaterProdActive(!waterProdActive);
     }
-    if (bioticStressActive) {
-      setbioticStressActive(!bioticStressActive);
+    if (DiseaseStressActive) {
+      setDiseaseStressActive(!DiseaseStressActive);
     }
   };
 
@@ -1130,8 +1127,8 @@ const MainPage = () => {
     if (waterProdActive) {
       setwaterProdActive(!waterProdActive);
     }
-    if (bioticStressActive) {
-      setbioticStressActive(!bioticStressActive);
+    if (DiseaseStressActive) {
+      setDiseaseStressActive(!DiseaseStressActive);
     }
     SetselectedParameter("Harvest Date");
     dropdownButtonPara();
@@ -1158,8 +1155,8 @@ const MainPage = () => {
     if (waterProdActive) {
       setwaterProdActive(!waterProdActive);
     }
-    if (bioticStressActive) {
-      setbioticStressActive(!bioticStressActive);
+    if (DiseaseStressActive) {
+      setDiseaseStressActive(!DiseaseStressActive);
     }
     SetselectedParameter("Sucrose");
     dropdownButtonPara();
@@ -1188,8 +1185,8 @@ const MainPage = () => {
     if (waterProdActive) {
       setwaterProdActive(!waterProdActive);
     }
-    if (bioticStressActive) {
-      setbioticStressActive(!bioticStressActive);
+    if (DiseaseStressActive) {
+      setDiseaseStressActive(!DiseaseStressActive);
     }
     SetselectedParameter("Crop Yield");
     dropdownButtonPara();
@@ -1277,8 +1274,8 @@ const MainPage = () => {
     if (waterProdActive) {
       setwaterProdActive(!waterProdActive);
     }
-    if (bioticStressActive) {
-      setbioticStressActive(!bioticStressActive);
+    if (DiseaseStressActive) {
+      setDiseaseStressActive(!DiseaseStressActive);
     }
     SetselectedParameter("Evapotranspiration");
     dropdownButtonPara();
@@ -1303,8 +1300,8 @@ const MainPage = () => {
     if (waterProdActive) {
       setwaterProdActive(!waterProdActive);
     }
-    if (bioticStressActive) {
-      setbioticStressActive(!bioticStressActive);
+    if (DiseaseStressActive) {
+      setDiseaseStressActive(!DiseaseStressActive);
     }
     SetselectedParameter("IWR");
     dropdownButtonPara();
@@ -1314,8 +1311,8 @@ const MainPage = () => {
     setlegendString("wp");
     settempstring("wp");
     setwaterProdActive(!waterProdActive);
-    if (bioticStressActive) {
-      setbioticStressActive(!bioticStressActive);
+    if (DiseaseStressActive) {
+      setDiseaseStressActive(!DiseaseStressActive);
     }
     if (IWRActive) {
       setIWRActive(!IWRActive);
@@ -1336,10 +1333,10 @@ const MainPage = () => {
     dropdownButtonPara();
   };
 
-  const onClickBiotic = () => {
+  const onClickDisease = () => {
     setlegendString("bs");
     settempstring("bs");
-    setbioticStressActive(!bioticStressActive);
+    setDiseaseStressActive(!DiseaseStressActive);
     if (waterProdActive) {
       setwaterProdActive(!waterProdActive);
     }
@@ -1358,7 +1355,7 @@ const MainPage = () => {
     if (yieldActive) {
       setYieldActive(!yieldActive);
     }
-    SetselectedParameter("Biotic Stress");
+    SetselectedParameter("Disease Stress");
     dropdownButtonPara();
   };
 
@@ -1378,25 +1375,21 @@ const MainPage = () => {
       // formData.append("selectedDate", selectedDate);
       // formData.append("file", blobData, "file.tiff");
 
-      const response = await fetch(
-        "https://riyadhhazel.duckdns.org/SendAllData",
-        {
-          method: "POST",
-          body: JSON.stringify({
-            geodata: geo,
-            selectedDate,
-            selectedParameter,
-            selectedCrop,
-            file:
-              blobData instanceof Blob ? await blobToBase64(blobData) : null,
-            meandata: meanData,
-            jsonJoin,
-          }),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const response = await fetch("http://localhost:3000/SendAllData", {
+        method: "POST",
+        body: JSON.stringify({
+          geodata: geo,
+          selectedDate,
+          selectedParameter,
+          selectedCrop,
+          file: blobData instanceof Blob ? await blobToBase64(blobData) : null,
+          meandata: meanData,
+          jsonJoin,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
       if (response.ok) {
       } else {
@@ -1408,7 +1401,7 @@ const MainPage = () => {
   };
 
   const GetAllData = async () => {
-    const response = await fetch("https://riyadhhazel.duckdns.org/GetAllData", {
+    const response = await fetch("http://localhost:3000/GetAllData", {
       method: "POST",
       // body: JSON.stringify({
       //   // geodata,
@@ -2539,11 +2532,11 @@ const MainPage = () => {
                               color: "white",
                               fontFamily: "Red Hat Display",
                             }}
-                            onClick={onClickBiotic}
+                            onClick={onClickDisease}
                           >
                             {russian
                               ? "Водопроизводительность"
-                              : "Biotic Stress"}
+                              : "Disease Stress"}
                           </button>
                         </li>
                       </ul>
@@ -3721,9 +3714,9 @@ const MainPage = () => {
                           color: "white",
                           fontFamily: "Red Hat Display",
                         }}
-                        onClick={onClickBiotic}
+                        onClick={onClickDisease}
                       >
-                        {russian ? "Водопроизводительность" : "Biotic Stress"}
+                        {russian ? "Водопроизводительность" : "Disease Stress"}
                       </button>
                     </li>
                     {/* <li style={{ marginBottom: "10px" }}>
@@ -4297,7 +4290,7 @@ const MainPage = () => {
                     </div>
                   )}
 
-                  {bioticStressActive && (
+                  {DiseaseStressActive && (
                     <div>
                       <div
                         style={{
@@ -4315,7 +4308,9 @@ const MainPage = () => {
                             fontFamily: "Red Hat Display",
                           }}
                         >
-                          {russian ? "Водопроизводительность" : "Biotic Stress"}
+                          {russian
+                            ? "Водопроизводительность"
+                            : "Disease Stress"}
                         </span>
                         {!resultListClicked && (
                           <div
